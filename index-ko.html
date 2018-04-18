@@ -13,6 +13,7 @@
    
   </head>
   <body>
+        <button data-bind="click: addEducation">Add Education</button>
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
@@ -22,7 +23,7 @@
               <img src="avatar.jpg" alt="avatar">
             </div>
             <div id="text-header">
-              <h1>Hello,<br> my name is <span id="nameFirst"></span><sup id="nameId"></sup> and this is my resume/cv</h1>
+              <h1>Hello,<br> my name is <span data-bind="text:firstName"></span><sup id="nameId"></sup> and this is my resume/cv</h1>
             </div>
           </div>
         </div>
@@ -37,35 +38,17 @@
           <!-- EDUCATION -->
           <div class="box">
             <h2>Education</h2>
-            <ul id="education" class="clearfix">
+            <ul id="education" class="clearfix" data-bind="foreach: educationItems">
               <li>
-                <div class="year pull-left">1990</div>
+                <div class="year pull-left" data-bind="text: year">?</div>
                 <div class="description pull-right">
-                  <h3>I was born in Katowice</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.</p>
+                  <h3 data-bind="text: title">?</h3>
+                  <p data-bind="text: body"></p>
                 </div>
               </li>
-              <li>
-                <div class="year pull-left">2005</div>
-                <div class="description pull-right">
-                  <h3>Secondary school specializing in artistic</h3>
-                  <p>Eos, explicabo, nam, tenetur et ab eius deserunt aspernatur ipsum ducimus quibusdam quis voluptatibus.</p>
-                </div>
-              </li>
-              <li>
-                <div class="year pull-left">2009</div>
-                <div class="description pull-right">
-                  <h3>First level graduation in Graphic Design</h3>
-                  <p>Aspernatur, mollitia, quos maxime eius suscipit sed beatae ducimus quaerat quibusdam perferendis? Iusto, quibusdam asperiores unde repellat.</p>
-                </div>
-              </li>
-              <li>
-                <div class="year pull-left">2012</div>
-                <div class="description pull-right">
-                  <h3>Second level graduation in Graphic Design</h3>
-                  <p>Ducimus, aliquam tempore autem itaque et accusantium!</p>
-                </div>
-              </li>
+             
+              
+              
             </ul>
           </div>
           <!-- EXPERIENCES -->
@@ -158,12 +141,13 @@
     </div>
     <!-- JQUERY -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
- 
+  <script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.2.js"></script>
+  
   <!-- BOOTSTRAP -->
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js" rel="stylesheet" >
     <!-- SCRIPTS -->
     <script src="js/scripts.js"></script>
     <script src="js/resumedata.js"></script>
-    <script src="js/site.js"></script>
+    <script src="js/siteko.js"></script>
   </body>
 </html>
