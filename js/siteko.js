@@ -9,6 +9,16 @@ function EducationItem (year, title,body) {
 
 }
 
+function ExperienceItem (year, company,jobtitle, jobdesc) {
+
+    this.year = year;
+    this.company = company;
+    this.jobtitle = jobtitle;
+    this.jobdesc = jobdesc;
+
+
+}
+
 
 function AppViewModel() {
     this.firstName = ko.observable("Bert");
@@ -20,6 +30,13 @@ function AppViewModel() {
         new EducationItem(1983,"Dublin","College of Marketing"),
         new EducationItem(1985,"Dublin","Open University"),
     ]);
+
+    self.experienceItems = ko.observableArray([
+        new ExperienceItem (1978, "Irish Ress","coybody", "runing around"),
+        new ExperienceItem (1979, "Irish Ress","subeditor", "editing around"),
+        new ExperienceItem (1980, "Irish Ress","production", "production around"),
+    ]);
+
 
     this.addEducation = function() {
         self.educationItems.push(new EducationItem(1986,"Dublin","School of Hard Knocks"))

@@ -54,20 +54,21 @@
           <!-- EXPERIENCES -->
           <div class="box">
             <h2>Experiences</h2>
-            <!-- ko foreach: educationItems -->
+            <!-- ko foreach: experienceItems -->
 
             <div class="job clearfix" >
               <div class="col-xs-3">
-                <div class="where">Google</div>
-                <div class="year">2013 - 2014</div>
+                <div class="where" data-bind="text: company">Google</div>
+                <div class="year"  data-bind="text: year">2013 - 2014</div>
               </div>
               <div class="col-xs-9">
-                <div class="profession">Front-end developer / php programmer</div>
-                <div class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, et, illum perferendis veritatis velit sunt similique qui magni totam harum tempore eius laboriosam accusantium necessitatibus voluptatum? Enim, itaque dignissimos quia.</div>
+                <div class="profession" data-bind="text: jobtitle">Front-end developer / php programmer</div>
+                <div class="description"  data-bind="text: jobdesc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, et, illum perferendis veritatis velit sunt similique qui magni totam harum tempore eius laboriosam accusantium necessitatibus voluptatum? Enim, itaque dignissimos quia.</div>
               </div>
             </div>
         <!-- /ko -->
 
+        </div>
         </div>
         <div class="col-xs-12 col-sm-5">
           <!-- CONTACT -->
