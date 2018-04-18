@@ -15,20 +15,40 @@ var resumeObjects =
 
 
 
-
-
 $(function () {
 
-    injectResume(resumeObjects[1]);
+    injectResume(resumeData);
 
 });
 
-function injectResume(resumeOb) {
+function injectResume(resumeObj) {
+
+    $('#nameFirst').html(resumeObj.nameFirst);
+    $('#nameId').html(resumeObj.nameId);
+
+    renderEducaton(resumeObj.education) ;
+}
 
 
-    $('#nameFirst').html(resumeOb.nameFirst);
-    $('#nameId').html(resumeOb.nameId);
+function renderEducaton(listOfItems) {
+    $('#education').empty();
 
+    var htmlString = '';
 
+for(var i =0; i < listOfItems.length; i++) {
+
+var currentItem = listOfItems[i];
+
+htmlString +='<li>\
+<div class="year pull-left">' + currentItem.year +  '</div>\
+<div class="description pull-right">\
+  <h3>' + currentItem.title +' </h3>\
+  <p>'+ currentItem.body +'</p>\
+</div>\
+</li>';
+
+}
+
+$('#education').append(htmlString);
 
 }
